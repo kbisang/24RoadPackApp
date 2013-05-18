@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6340AA631747652F00C674FC /* WebserviceJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 6340AA621747652F00C674FC /* WebserviceJob.m */; };
 		638A64AE173D444600B93CC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638A64AD173D444600B93CC5 /* UIKit.framework */; };
 		638A64B0173D444600B93CC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638A64AF173D444600B93CC5 /* Foundation.framework */; };
 		638A64B2173D444600B93CC5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638A64B1173D444600B93CC5 /* CoreGraphics.framework */; };
@@ -27,11 +28,12 @@
 		638EA9F1174698B300A5E821 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638EA9F0174698B300A5E821 /* MobileCoreServices.framework */; };
 		638EA9F3174698C300A5E821 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638EA9F2174698C300A5E821 /* Security.framework */; };
 		638EA9F5174698CF00A5E821 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638EA9F4174698CF00A5E821 /* SystemConfiguration.framework */; };
-		638EA9F817469B7700A5E821 /* WebserviceJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 638EA9F717469B7700A5E821 /* WebserviceJob.m */; };
 		638EC6451747604400081E35 /* RoadPackTrackerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 638EC6441747604400081E35 /* RoadPackTrackerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6340AA611747652F00C674FC /* WebserviceJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebserviceJob.h; path = Model/WebserviceJob.h; sourceTree = "<group>"; };
+		6340AA621747652F00C674FC /* WebserviceJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebserviceJob.m; path = Model/WebserviceJob.m; sourceTree = "<group>"; };
 		638A64AA173D444600B93CC5 /* 24RoadPack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 24RoadPack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		638A64AD173D444600B93CC5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		638A64AF173D444600B93CC5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -174,8 +176,6 @@
 		638EA9F0174698B300A5E821 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		638EA9F2174698C300A5E821 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		638EA9F4174698CF00A5E821 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		638EA9F617469B7700A5E821 /* WebserviceJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebserviceJob.h; sourceTree = "<group>"; };
-		638EA9F717469B7700A5E821 /* WebserviceJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebserviceJob.m; sourceTree = "<group>"; };
 		638EC6431747604400081E35 /* RoadPackTrackerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoadPackTrackerViewController.h; path = View/RoadPackTrackerViewController.h; sourceTree = "<group>"; };
 		638EC6441747604400081E35 /* RoadPackTrackerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoadPackTrackerViewController.m; path = View/RoadPackTrackerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -262,14 +262,14 @@
 		638EA9371746712700A5E821 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6340AA611747652F00C674FC /* WebserviceJob.h */,
+				6340AA621747652F00C674FC /* WebserviceJob.m */,
 				638EA9E917467A1A00A5E821 /* SettingsModel.h */,
 				638EA9EA17467A1A00A5E821 /* SettingsModel.m */,
 				638EA9381746713900A5E821 /* DataProvider.h */,
 				638EA9391746713900A5E821 /* DataProvider.m */,
 				638EA93A1746713900A5E821 /* RoadPackTrackerModel.h */,
 				638EA93B1746713900A5E821 /* RoadPackTrackerModel.m */,
-				638EA9F617469B7700A5E821 /* WebserviceJob.h */,
-				638EA9F717469B7700A5E821 /* WebserviceJob.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -538,8 +538,8 @@
 				638EA93C1746713900A5E821 /* DataProvider.m in Sources */,
 				638EA93D1746713900A5E821 /* RoadPackTrackerModel.m in Sources */,
 				638EA9EB17467A1A00A5E821 /* SettingsModel.m in Sources */,
-				638EA9F817469B7700A5E821 /* WebserviceJob.m in Sources */,
 				638EC6451747604400081E35 /* RoadPackTrackerViewController.m in Sources */,
+				6340AA631747652F00C674FC /* WebserviceJob.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
