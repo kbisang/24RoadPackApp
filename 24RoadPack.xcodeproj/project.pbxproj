@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CDF6D59174CF4DE00B5027E /* Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF6D58174CF4DE00B5027E /* Coordinate.m */; };
+		4CDF6D5C174D07F800B5027E /* Address.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF6D5B174D07F800B5027E /* Address.m */; };
+		4CE72056174D6DE100BCBFFF /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE72055174D6DE100BCBFFF /* Location.m */; };
 		6340AA631747652F00C674FC /* WebserviceJob.m in Sources */ = {isa = PBXBuildFile; fileRef = 6340AA621747652F00C674FC /* WebserviceJob.m */; };
 		638A64AE173D444600B93CC5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638A64AD173D444600B93CC5 /* UIKit.framework */; };
 		638A64B0173D444600B93CC5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 638A64AF173D444600B93CC5 /* Foundation.framework */; };
@@ -32,6 +35,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CDF6D57174CF4DE00B5027E /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coordinate.h; path = Model/Coordinate.h; sourceTree = "<group>"; };
+		4CDF6D58174CF4DE00B5027E /* Coordinate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Coordinate.m; path = Model/Coordinate.m; sourceTree = "<group>"; };
+		4CDF6D5A174D07F800B5027E /* Address.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Address.h; path = Model/Address.h; sourceTree = "<group>"; };
+		4CDF6D5B174D07F800B5027E /* Address.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Address.m; path = Model/Address.m; sourceTree = "<group>"; };
+		4CE72054174D6DE100BCBFFF /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Location.h; path = Model/Location.h; sourceTree = "<group>"; };
+		4CE72055174D6DE100BCBFFF /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Location.m; path = Model/Location.m; sourceTree = "<group>"; };
 		6340AA611747652F00C674FC /* WebserviceJob.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebserviceJob.h; path = Model/WebserviceJob.h; sourceTree = "<group>"; };
 		6340AA621747652F00C674FC /* WebserviceJob.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WebserviceJob.m; path = Model/WebserviceJob.m; sourceTree = "<group>"; };
 		638A64AA173D444600B93CC5 /* 24RoadPack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 24RoadPack.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,6 +271,8 @@
 		638EA9371746712700A5E821 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4CE72054174D6DE100BCBFFF /* Location.h */,
+				4CE72055174D6DE100BCBFFF /* Location.m */,
 				6340AA611747652F00C674FC /* WebserviceJob.h */,
 				6340AA621747652F00C674FC /* WebserviceJob.m */,
 				638EA9E917467A1A00A5E821 /* SettingsModel.h */,
@@ -270,6 +281,10 @@
 				638EA9391746713900A5E821 /* DataProvider.m */,
 				638EA93A1746713900A5E821 /* RoadPackTrackerModel.h */,
 				638EA93B1746713900A5E821 /* RoadPackTrackerModel.m */,
+				4CDF6D57174CF4DE00B5027E /* Coordinate.h */,
+				4CDF6D58174CF4DE00B5027E /* Coordinate.m */,
+				4CDF6D5A174D07F800B5027E /* Address.h */,
+				4CDF6D5B174D07F800B5027E /* Address.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -540,6 +555,9 @@
 				638EA9EB17467A1A00A5E821 /* SettingsModel.m in Sources */,
 				638EC6451747604400081E35 /* RoadPackTrackerViewController.m in Sources */,
 				6340AA631747652F00C674FC /* WebserviceJob.m in Sources */,
+				4CDF6D59174CF4DE00B5027E /* Coordinate.m in Sources */,
+				4CDF6D5C174D07F800B5027E /* Address.m in Sources */,
+				4CE72056174D6DE100BCBFFF /* Location.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

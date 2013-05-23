@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0PR-WU-6ms">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="0PR-WU-6ms">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -61,6 +61,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onStartTrackingButtonClicked:" destination="2" eventType="touchUpInside" id="AmQ-Xc-AJe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5i-NM-r0h">
                                 <constraints>
@@ -109,6 +112,7 @@
                     <navigationItem key="navigationItem" title="24RoadPack Tracker" id="bch-no-FA1"/>
                     <connections>
                         <outlet property="downloadRouteButton" destination="z7d-Pc-UhC" id="td8-Yh-pm7"/>
+                        <outlet property="mapView" destination="Px8-Es-8iC" id="XRo-QI-XuP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -473,7 +477,9 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RoadPackTrackerViewController.h"/>
             <relationships>
                 <relationship kind="action" name="onDownloadRouteButtonClicked:"/>
+                <relationship kind="action" name="onStartTrackingButtonClicked:"/>
                 <relationship kind="outlet" name="downloadRouteButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
             </relationships>
         </class>
     </classes>

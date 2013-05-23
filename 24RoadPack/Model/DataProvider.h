@@ -1,6 +1,7 @@
 
 // Project includes
 #import "WebserviceJob.h"
+#import "Coordinate.h"
 
 // Library includes
 #import <Foundation/Foundation.h>
@@ -8,6 +9,8 @@
 @interface DataProvider : NSObject
 
 @property (strong, nonatomic) WebserviceJob* webserviceJob;
+@property (strong, nonatomic) Coordinate* HomeCoordinate;
+@property (strong, nonatomic) Coordinate* DestinationCoordinate;
 
 +(DataProvider*)sharedDataProvider;
 

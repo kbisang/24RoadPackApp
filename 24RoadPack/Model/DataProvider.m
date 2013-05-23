@@ -18,6 +18,8 @@
 static DataProvider* dataProviderSingleton;
 
 @synthesize webserviceJob;
+@synthesize HomeCoordinate;
+@synthesize DestinationCoordinate;
 
 +(DataProvider*) sharedDataProvider {
     if(!dataProviderSingleton){
