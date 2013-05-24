@@ -7,7 +7,7 @@
 #import "Location.h"
 
 @interface RoadPackTrackerViewController ()
-
+@property NSInteger AnnotationCounter;
 @end
 
 @implementation RoadPackTrackerViewController
@@ -41,14 +41,14 @@
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     [dateFormat setDateFormat:@"yyyy-MM-dd"];
     NSDate *date = [dateFormat dateFromString:dateStr];
-    [dateFormat setDateFormat:@"dd.MM.yyyy"];
+    [dateFormat setDateFormat:NSLocalizedString(@"map.address.format", @"map")];
     return [dateFormat stringFromDate:date];
 }
 
 - (NSString *)getPickupJobDateTime {
      WebserviceJob* webserviceJob = [DataProvider sharedDataProvider].webserviceJob;
 
-    return [NSString stringWithFormat:@"%@: %@-%@", @"Abholzeit", [self getFormattedDate:webserviceJob.pickupDate], [self getFormattedTime:webserviceJob.deliveryTime]];
+    return [NSString stringWithFormat:@"%@: %@-%@", NSLocalizedString(@"map.homeAddress.latestPickuptDate", @"map"), [self getFormattedDate:webserviceJob.pickupDate], [self getFormattedTime:webserviceJob.deliveryTime]];
 }
 
 - (NSString *)getHomeAddress {
@@ -59,7 +59,7 @@
 - (NSString *)getDeliveryJobDateTime {
     WebserviceJob* webserviceJob = [DataProvider sharedDataProvider].webserviceJob;
 
-    return [NSString stringWithFormat:@"%@: %@-%@", @"Lieferzeit", [self getFormattedDate:webserviceJob.deliveryDate], [self getFormattedTime:webserviceJob.pickupTime]];
+    return [NSString stringWithFormat:@"%@: %@-%@", NSLocalizedString(@"map.homeAddress.latestDeliveryDate", @"map"), [self getFormattedDate:webserviceJob.deliveryDate], [self getFormattedTime:webserviceJob.pickupTime]];
 }
 
 - (NSString *)getDestinationAddress {
@@ -70,6 +70,7 @@
 - (void)showHomeCoordinateOnMap:(CLLocationCoordinate2D)homeCoordinate andDestinationCoordinate:(CLLocationCoordinate2D)destinationCoordinate{
     Location *homeAnnotation = [[Location alloc] initWithJobDateTime:[self getPickupJobDateTime] address:[self getHomeAddress] coordinate:homeCoordinate];
     Location *destinationAnnotation = [[Location alloc] initWithJobDateTime:[self getDeliveryJobDateTime] address:[self getDestinationAddress] coordinate:destinationCoordinate];
+    self.AnnotationCounter = 2;
     [self.mapView addAnnotation:homeAnnotation];
     [self.mapView addAnnotation:destinationAnnotation];
     
@@ -88,7 +89,8 @@
             annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:locationIdentifier];
             annotationView.enabled = YES;
             annotationView.canShowCallout = YES;
-            annotationView.pinColor = MKPinAnnotationColorGreen;
+            annotationView.pinColor = (self.AnnotationCounter==2) ? MKPinAnnotationColorGreen : MKPinAnnotationColorRed;
+            self.AnnotationCounter--;
         } else {
             annotationView.annotation = annotation;
         }
