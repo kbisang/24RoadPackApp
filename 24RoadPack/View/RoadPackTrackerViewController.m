@@ -30,6 +30,11 @@
     // 1
     self.mapView.zoomEnabled=YES;
     self.mapView.delegate = self;
+    self.textFieldJobId.delegate = self;
+}
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (NSString *)getFormattedTime:(NSString*)time {
