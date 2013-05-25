@@ -36,8 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4C03B715174F88C100323C1F /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		4C03B717174F894000323C1F /* de */ = {isa = PBXFileReference; lastKnownFileType = file; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4C03B715174F88C100323C1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4C03B717174F894000323C1F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C03B718174F894000323C1F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4CDA3902174F779C003BC4DE /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		4CDA3909174F77FB003BC4DE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -217,7 +217,6 @@
 		638A64A1173D444600B93CC5 = {
 			isa = PBXGroup;
 			children = (
-				4C03B716174F88C100323C1F /* Localizable.strings */,
 				638A64B3173D444600B93CC5 /* 24RoadPack */,
 				638A64AC173D444600B93CC5 /* Frameworks */,
 				638A64AB173D444600B93CC5 /* Products */,
@@ -297,6 +296,7 @@
 		638EA93E1746714100A5E821 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4C03B716174F88C100323C1F /* Localizable.strings */,
 				4CDA390A174F77FB003BC4DE /* MainStoryboard.storyboard */,
 				638EA959174671CA00A5E821 /* images */,
 			);
@@ -578,7 +578,6 @@
 				4C03B717174F894000323C1F /* de */,
 			);
 			name = Localizable.strings;
-			path = 24RoadPack;
 			sourceTree = "<group>";
 		};
 		4CDA390A174F77FB003BC4DE /* MainStoryboard.storyboard */ = {
