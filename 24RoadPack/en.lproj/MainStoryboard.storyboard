@@ -83,7 +83,7 @@
                                     <constraint firstAttribute="width" constant="178" id="dxx-6b-cWs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                             </textField>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Px8-Es-8iC">
                                 <constraints>
@@ -481,6 +481,7 @@
                 <relationship kind="action" name="onStartTrackingButtonClicked:"/>
                 <relationship kind="outlet" name="downloadRouteButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="mapView" candidateClass="MKMapView"/>
+                <relationship kind="outlet" name="textFieldJobId" candidateClass="UITextField"/>
             </relationships>
         </class>
     </classes>
