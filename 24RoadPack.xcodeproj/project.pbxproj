@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C03B714174F88C100323C1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C03B716174F88C100323C1F /* Localizable.strings */; };
+		4C2729E41755514D00979D59 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C2729E31755514D00979D59 /* CoreLocation.framework */; };
 		4CDA3904174F779C003BC4DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CDA3902174F779C003BC4DE /* InfoPlist.strings */; };
 		4CDA3908174F77FB003BC4DE /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CDA390A174F77FB003BC4DE /* MainStoryboard.storyboard */; };
 		4CDF6D59174CF4DE00B5027E /* Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF6D58174CF4DE00B5027E /* Coordinate.m */; };
@@ -39,6 +40,7 @@
 		4C03B715174F88C100323C1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C03B717174F894000323C1F /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4C03B718174F894000323C1F /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		4C2729E31755514D00979D59 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4CDA3902174F779C003BC4DE /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		4CDA3909174F77FB003BC4DE /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		4CDF6D57174CF4DE00B5027E /* Coordinate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Coordinate.h; path = Model/Coordinate.h; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C2729E41755514D00979D59 /* CoreLocation.framework in Frameworks */,
 				638EA9F5174698CF00A5E821 /* SystemConfiguration.framework in Frameworks */,
 				638EA9F3174698C300A5E821 /* Security.framework in Frameworks */,
 				638EA9F1174698B300A5E821 /* MobileCoreServices.framework in Frameworks */,
@@ -217,6 +220,7 @@
 		638A64A1173D444600B93CC5 = {
 			isa = PBXGroup;
 			children = (
+				4C2729E31755514D00979D59 /* CoreLocation.framework */,
 				638A64B3173D444600B93CC5 /* 24RoadPack */,
 				638A64AC173D444600B93CC5 /* Frameworks */,
 				638A64AB173D444600B93CC5 /* Products */,
