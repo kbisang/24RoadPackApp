@@ -55,7 +55,7 @@
 +(void)loadJob:(NSNumber *)jobId{
     
     NSString* urlString = [NSString
-                           stringWithFormat:@"http://10.29.3.195:8080/24RoadPack_webApp/resources/webservice/job/%@",jobId];
+                           stringWithFormat:@"http://10.29.3.195:9080/24RoadPack_webApp/resources/webservice/job/%@",jobId];
     
     
     [[DataProvider sharedDataProvider] sendGetRequest:urlString
@@ -71,27 +71,6 @@
                 } failure:^(NSError* error){
                         NSLog(@"Job data for job Id: %@ not loaded",jobId);
                 }];
-}
-
-+(void)getCoordinatesFromWebserviceJob:(WebserviceJob *)webserviceJob{
-    
-    NSString* urlString = [NSString
-                           stringWithFormat:@"http://maps.googleapis.com/maps/api/geocode/json?address=%@+%@,+%@,+%@&sensor=true",webserviceJob.homeHouseNumber, webserviceJob.homeStreet, webserviceJob.homeLocation, webserviceJob.homeZip];
-    
-    
-    [[DataProvider sharedDataProvider] sendGetRequest:urlString
-                             withAttributesForMapping:[self coordinateAttributes]
-                              withClassNameForMapping:[Coordinate class]
-     
-                                           completion:^(NSArray* result){
-                                               
-                                               [DataProvider sharedDataProvider].HomeCoordinate = (Coordinate*)result;
-                                               
-                                               NSLog(@"lat and lng of address %@ successfully loaded", webserviceJob.homeStreet);
-                                               
-                                           } failure:^(NSError* error){
-                                               NSLog(@"lat and lng of address %@ couldn't be loaded", webserviceJob.homeStreet);
-                                           }];
 }
 
 +(CLLocationCoordinate2D)getCoordinatesForAddressSynchronously:(Address *) address {
