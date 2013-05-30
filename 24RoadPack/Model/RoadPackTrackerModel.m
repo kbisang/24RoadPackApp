@@ -52,7 +52,7 @@
     return array;
 }
 
-+(void)loadJob:(NSNumber *)jobId{
++(void)loadJob:(NSNumber *)jobId completion:(CompletionBlock)completionBlock {
     
     NSString* urlString = [NSString
                            stringWithFormat:@"http://10.29.3.195:9080/24RoadPack_webApp/resources/webservice/job/%@",jobId];
@@ -65,7 +65,10 @@
                 completion:^(NSArray* result){
                     
                 [DataProvider sharedDataProvider].webserviceJob = (WebserviceJob*)[result objectAtIndex:0];
-                                               
+                    
+                // hier callback methode aufrufen!
+                completionBlock();
+                    
                 NSLog(@"Job data for job id: %@ successfully loaded", jobId);
                                                
                 } failure:^(NSError* error){

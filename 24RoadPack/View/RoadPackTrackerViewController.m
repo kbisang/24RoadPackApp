@@ -73,7 +73,16 @@
 }
 
 - (void)drawPolygonBetweenHomeCoordinate:(CLLocationCoordinate2D)homeCoordinate andDestinationCoordinate:(CLLocationCoordinate2D)destinationCoordinate {
-    //initialize your map view and add it to your view hierarchy - **set its delegate to self***
+    CLLocationCoordinate2D coordinateArray[2];
+    
+    coordinateArray[0] = homeCoordinate;
+    coordinateArray[1] = destinationCoordinate;
+    
+    self.routeLine = [MKPolyline polylineWithCoordinates:coordinateArray count:2];
+    [self.mapView setVisibleMapRect:[self.routeLine boundingMapRect] animated:YES];    
+}
+
+- (void)drawExamplePolygonLine {
     CLLocationCoordinate2D coordinateArray[20];
     
     coordinateArray[0] = CLLocationCoordinate2DMake(47.47793830, 7.60120180);
@@ -97,11 +106,8 @@
     coordinateArray[18] = CLLocationCoordinate2DMake(47.018258, 8.303154);
     coordinateArray[19] = CLLocationCoordinate2DMake(47.01343360, 8.30503320);
     
-    //coordinateArray[0] = homeCoordinate;
-    //coordinateArray[1] = destinationCoordinate;
-    
     self.routeLine = [MKPolyline polylineWithCoordinates:coordinateArray count:20];
-    [self.mapView setVisibleMapRect:[self.routeLine boundingMapRect] animated:YES];    
+    [self.mapView setVisibleMapRect:[self.routeLine boundingMapRect] animated:YES];
     [self.mapView addOverlay:self.routeLine];
 }
 
@@ -110,15 +116,9 @@
     self.homeAnnotation = [[Location alloc] initWithJobDateTime:[self getPickupJobDateTime] address:[self getHomeAddress] coordinate:homeCoordinate];
     self.destinationAnnotation = [[Location alloc] initWithJobDateTime:[self getDeliveryJobDateTime] address:[self getDestinationAddress] coordinate:destinationCoordinate];
     self.AnnotationCounter = 2;
-
-    [self drawPolygonBetweenHomeCoordinate:homeCoordinate andDestinationCoordinate:destinationCoordinate];
     
     [self.mapView addAnnotation:self.homeAnnotation];
     [self.mapView addAnnotation:self.destinationAnnotation];
-    
-    //MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(homeCoordinate, 90.0*METERS_PER_MILE, 90.0*METERS_PER_MILE);
-    
-    //[self.mapView setRegion:viewRegion animated:YES];
 }
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation {
@@ -193,7 +193,19 @@
 }
 
 - (IBAction)onDownloadRouteButtonClicked:(id)sender {
-    [RoadPackTrackerModel loadJob:[NSNumber numberWithInt:1]];
+    [self removeAllElementsOnMap];
+    [self colorButtonsAsStopped];
+    [RoadPackTrackerModel loadJob:[NSNumber numberWithInt:[self.textFieldJobId.text intValue]] completion:^{
+        WebserviceJob* webserviceJob = [DataProvider sharedDataProvider].webserviceJob;
+        if (webserviceJob == nil) {
+            return;
+        }
+        CLLocationCoordinate2D homeCoordinate = [self assignHomeCoordinateToDataProvider];
+        CLLocationCoordinate2D destinationCoordinate = [self assignDestinationCoordinateToDataProvider];
+        
+        [self showHomeCoordinateOnMap:homeCoordinate andDestinationCoordinate:destinationCoordinate];
+        [self drawPolygonBetweenHomeCoordinate:homeCoordinate andDestinationCoordinate:destinationCoordinate];
+    }];
 }
 
 - (IBAction)onStartTrackingButtonClicked:(id)sender {
@@ -201,12 +213,29 @@
     if (webserviceJob == nil) {
         return;
     }
-    CLLocationCoordinate2D homeCoordinate = [self assignHomeCoordinateToDataProvider];
-    CLLocationCoordinate2D destinationCoordinate = [self assignDestinationCoordinateToDataProvider];
     
-    homeCoordinate = CLLocationCoordinate2DMake(47.47793830, 7.60120180);
-    destinationCoordinate = CLLocationCoordinate2DMake(47.01343360, 8.30503320);
-    
-    [self showHomeCoordinateOnMap:homeCoordinate andDestinationCoordinate:destinationCoordinate];
+    [self colorButtonsAsStarted];
+    [self drawExamplePolygonLine];
+}
+
+- (IBAction)onStopTrackingButtonClicked:(id)sender {
+    [self colorButtonsAsStopped];
+    [self removeAllElementsOnMap];
+}
+
+-(void) removeAllElementsOnMap {
+    NSArray *annotationsOnMap = self.mapView.annotations;
+    [self.mapView removeAnnotations:annotationsOnMap];
+    [self.mapView removeOverlays:self.mapView.overlays];
+}
+
+- (void)colorButtonsAsStarted {
+    self.startButton.backgroundColor = [UIColor greenColor];
+    self.stopButton.backgroundColor = [UIColor lightGrayColor];
+}
+
+- (void)colorButtonsAsStopped {
+    self.startButton.backgroundColor = [UIColor lightGrayColor];
+    self.stopButton.backgroundColor = [UIColor redColor];
 }
 @end
